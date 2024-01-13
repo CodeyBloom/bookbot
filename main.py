@@ -1,16 +1,28 @@
 def main():
-    '''Making a script to print the file contents'''
-    with open("books/frankenstein.txt") as f:
-        file_contents = f.read()
-    print(file_contents)
-        
-    '''Making a script to count the words'''
-    words = file_contents.split()
-    count = 0
-    for word in words:
-        count += 1
+    path = "books/frankenstein.txt"
+    text = get_text(path)
+    print(text)
+    word_count(text)
+
+
+def get_text(path):
+  '''Making a script to get text'''
+  with open(path) as f:
+        return f.read()
+  
+
+def word_count(text):
+    '''Making a script to count words'''
+    words = text.split()
+    count = len(words)
     print(f"This document had {count} words")
+
 
 main()
 
+
+
     
+
+    
+
